@@ -11,3 +11,17 @@ This repository is based on the paper, "Domain Adaptation for Satellite-Borne Hy
 }
 
 ```
+## Getting started
+
+### Installations
+We used Python 3.7 to write/run our code and Anaconda to install the following libraries:
+
+```
+conda install pytorch==1.7.1 torchvision==0.8.2 cudatoolkit=10.1 -c pytorch
+pip install tensorboardX tensorboard
+pip install torch-summary
+conda install matplotlib 
+conda install -c anaconda pandas
+
+```
+
