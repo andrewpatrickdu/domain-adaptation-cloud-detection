@@ -157,7 +157,7 @@ python tta-tent-resnet50.py \
     --ADAPTATION_LEARNING_RATE 0.001 \
     --GPU 0 \
     --LOG False
-    --ROOT /home/andrew/domain-adaptation-cloud-detection
+    --ROOT /home/andrew/domain-adaptation-cloud-detection  
 ```
 
 
