@@ -37,10 +37,12 @@ python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 -
                                     resnet50
 ```
 
-For example, to train the CloudScout architecture on Sentinel-2 data using 3 bands:
+For example, to train the CloudScout architecture on the 3 bands of Sentinel-2:
 ```
 python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/cloud-detector
 ```
+Once training is completed, the results and checkpoint files are saved in ```cloud-detector/checkpoints/source-models/cloudscout-128a-S2-2018```.
+
 
 ## Updating the source model to the target domain via offline adaptation (bandwidth efficient SDA)
 There are three python scripts used to update a source model in the offline adaptation setting:
@@ -49,7 +51,7 @@ There are three python scripts used to update a source model in the offline adap
 * ```fish-mask-cloudscout.py``` - used to update the CloudScout or CloudScout8 model.
 * ```fish-mask-resnet50.py``` - used to update the resnet50 model.
 
-For example, to update only 25% of the weights of CloudScout (trained on Sentinel-2) to Landsat-9 using 3 bands: 
+For example, to update only 25% of the weights of CloudScout (trained on Sentinel-2) to the 3 bands of Landsat-9: 
 ```
 python fish-mask-cloudscout.py \
     --MODEL cloudscout-128a-S2-2018 \
@@ -65,7 +67,7 @@ python fish-mask-cloudscout.py \
     --GPU 0 \
     --LOG True
 ```
-or to update only 1% of the weights of resnet-50 (trained on Landsat-9) to Sentinel-2 using 8 bands:
+or to update only 1% of the weights of resnet-50 (trained on Landsat-9) to the 3 bands of Sentinel-2:
 ```
 python fish-mask-resnet50.py \
     --MODEL resnet50-8-L9-2023 \
@@ -87,8 +89,7 @@ Two test-time adaptation appoaches were used to update a source model to the tar
 
 
 ### DUA
-
-
+For example, to update the CloudScout model (trained on Sentinel-2) to the 3 bands of Landsat-9:
 ```
 python tta-dua-cloudscout.py \
     --MODEL cloudscout-128a-S2-2018 \
@@ -104,7 +105,7 @@ python tta-dua-cloudscout.py \
     --GPU 0 \
     --LOG False
 ```
-
+or to update the resnet50 model (trained on Landsat-9) to Sentinel-2 using 3 bands
 ```
 python tta-dua-resnet50.py \
     --MODEL resnet50-128a-S2-2018 \
