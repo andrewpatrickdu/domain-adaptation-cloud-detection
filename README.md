@@ -37,11 +37,11 @@ python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 -
                                     resnet50
 ```
 
-For example, to train the CloudScout architecture on the 3 bands of Sentinel-2:
+For example, to train the CloudScout model on the 3 bands of Sentinel-2:
 ```
 python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-or to train the ResNet50 architecture on the 8 bands of Landsat-9: 
+or to train the ResNet50 model on the 8 bands of Landsat-9: 
 ```
 python train-source.py --MODEL_ARCH resnet50 --DATASET L9-2023 --NUM_BANDS 8 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
