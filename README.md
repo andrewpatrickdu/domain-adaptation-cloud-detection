@@ -146,18 +146,17 @@ python tta-tent-cloudscout.py \
 or to update the ResNet50 model (trained on Landsat-9) to the 8 bands of Sentinel-2:
 ```
 python tta-tent-resnet50.py \
-    --MODEL resnet50-8-L9-2023 \
+    --MODEL resnet50-8-S2-2018 \
     --NUM_BANDS 8 \
     --DATASET S2-2018 \
-    --ADAPTATION_BATCH_SIZE 16 \
+    --ADAPTATION_EPOCH 1 \
+    --ADAPTATION_BATCH_SIZE 6 \
     --ADAPTATION_SHUFFLE False \
-    --ADAPTATION_NUM_SAMPLES 16 \
-    --ADAPTATION_AUGMENTATION False \
-    --ADAPTATION_DECAY_FACTOR 0.94 \
-    --ADAPTATION_MIN_MOMENTUM_CONSTANT 0.005 \
-    --ADAPTATION_MOM_PRE 0.1 \
+    --ADAPTATION_NUM_SAMPLES 9999 \
+    --ADAPTATION_RESET_STATS True \
+    --ADAPTATION_LEARNING_RATE 0.001 \
     --GPU 0 \
-    --LOG False \
+    --LOG False
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 
