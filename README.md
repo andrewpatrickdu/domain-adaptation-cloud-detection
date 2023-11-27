@@ -87,6 +87,8 @@ There are four python scripts used to update a source model in the online adapta
 
 
 ### Dynamic Unsupervised Adaptation
+
+
 ```
 python tta-dua-cloudscout.py \
     --MODEL cloudscout-128a-S2-2018 \
@@ -103,7 +105,6 @@ python tta-dua-cloudscout.py \
     --LOG False
 ```
 
-### Test Entropy Minimisation (TENT)
 ```
 python tta-dua-resnet50.py \
     --MODEL resnet50-128a-S2-2018 \
@@ -120,6 +121,39 @@ python tta-dua-resnet50.py \
     --LOG False
 ```
 
+### Test Entropy Minimisation (TENT)
+
+
+```
+python tta-dua-resnet50.py \
+    --MODEL resnet50-128a-S2-2018 \
+    --NUM_BANDS 3 \
+    --DATASET L9-2023 \
+    --ADAPTATION_BATCH_SIZE 16 \
+    --ADAPTATION_SHUFFLE False \
+    --ADAPTATION_NUM_SAMPLES 16 \
+    --ADAPTATION_AUGMENTATION False \
+    --ADAPTATION_DECAY_FACTOR 0.94 \
+    --ADAPTATION_MIN_MOMENTUM_CONSTANT 0.005 \
+    --ADAPTATION_MOM_PRE 0.1 \
+    --GPU 0 \
+    --LOG False
+```
+
+```
+python tta-tent-cloudscout.py \
+    --MODEL cloudscout-128a-S2-2018 \
+    --NUM_BANDS 3 \
+    --DATASET L9-2023 \
+    --ADAPTATION_EPOCH 1 \
+    --ADAPTATION_BATCH_SIZE 6 \
+    --ADAPTATION_SHUFFLE False \
+    --ADAPTATION_NUM_SAMPLES 9999 \
+    --ADAPTATION_RESET_STATS True \
+    --ADAPTATION_LEARNING_RATE 0.001 \
+    --GPU 0 \
+    --LOG False
+```
 
 
 ## Help and updates
