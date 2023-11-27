@@ -68,7 +68,7 @@ python fish-mask-cloudscout.py \
     --LOG False \
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-or to update only 1% of the weights of resnet-50 (trained on Landsat-9) to the 3 bands of Sentinel-2:
+or to update only 1% of the weights of resnet-50 (trained on Landsat-9) to the 8 bands of Sentinel-2:
 ```
 python fish-mask-resnet50.py \
     --MODEL resnet50-8-L9-2023 \
@@ -108,11 +108,11 @@ python tta-dua-cloudscout.py \
     --LOG False \
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-or to update the ResNet50 model (trained on Landsat-9) to the 3 bands of Sentinel-2:
+or to update the ResNet50 model (trained on Landsat-9) to the 8 bands of Sentinel-2:
 ```
 python tta-dua-resnet50.py \
-    --MODEL resnet50-125-L9-2018 \
-    --NUM_BANDS 3 \
+    --MODEL resnet50-8-L9-2023 \
+    --NUM_BANDS 8 \
     --DATASET S2-2018 \
     --ADAPTATION_BATCH_SIZE 16 \
     --ADAPTATION_SHUFFLE False \
@@ -143,11 +143,11 @@ python tta-tent-cloudscout.py \
     --LOG False \
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-or to update the ResNet50 model (trained on Landsat-9) to the 3 bands of Sentinel-2:
+or to update the ResNet50 model (trained on Landsat-9) to the 8 bands of Sentinel-2:
 ```
 python tta-dua-resnet50.py \
-    --MODEL resnet50-128a-L9-2023 \
-    --NUM_BANDS 3 \
+    --MODEL resnet50-8-L9-2023 \
+    --NUM_BANDS 8 \
     --DATASET S2-2018 \
     --ADAPTATION_BATCH_SIZE 16 \
     --ADAPTATION_SHUFFLE False \
