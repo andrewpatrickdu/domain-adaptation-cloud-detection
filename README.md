@@ -32,7 +32,7 @@ NOTE: Make sure you add the two folders into the main directory (```cloud-detect
 To train a source model, run the following python script:
 
 ```
-python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 --GPU 0 --NUM_EPOCHS 300 --ROOT [directory of ```cloud-detection``` folder]
+python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 --GPU 0 --NUM_EPOCHS 300 --ROOT [directory of `cloud-detection` folder]
                                     cloudscout8          L9-2023             8
                                     resnet50
 ```
