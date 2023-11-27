@@ -39,7 +39,7 @@ python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 -
 
 For example, to train the CloudScout architecture on the 3 bands of Sentinel-2:
 ```
-python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detector
+python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 Once training has completed, the results and checkpoint files are saved in ```cloud-detector/checkpoints/source-models/cloudscout-128a-S2-2018```.
 
