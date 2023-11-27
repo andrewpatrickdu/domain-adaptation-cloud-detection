@@ -48,7 +48,10 @@ python train-source.py --MODEL_ARCH resnet50 --DATASET L9-2023 --NUM_BANDS 8 --G
 Once training has completed, the results and checkpoint files are saved in ```cloud-detector/checkpoints/source-models/```.
 
 
-## Updating the source model to the target domain via offline adaptation (bandwidth efficient SDA)
+## Updating the source model to the target domain 
+
+
+### Offline adaptation (bandwidth efficient SDA)
 There are three python scripts used to update a source model in the offline adaptation setting:
 
 * ```generate_mask.py``` - defines functions used to calculate the FISH Mask.
@@ -90,11 +93,11 @@ python fish-mask-resnet50.py \
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 
-## Updating the source model to the target domain via online adaptation (test-time adaptation)
+### Online adaptation (test-time adaptation)
 Two test-time adaptation appoaches were used to update a source model to the target domain: (1) Dynamic Unsupervised Adaptation (DUA), and (2) Test Entropy Minimisation (TENT).
 
 
-### DUA
+#### DUA
 For example, to update the CloudScout model (trained on Sentinel-2) to the 3 bands of Landsat-9:
 ```
 python tta-dua-cloudscout.py \
@@ -130,7 +133,7 @@ python tta-dua-resnet50.py \
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 
-### TENT
+#### TENT
 For example, to update the CloudScout model (trained on Sentinel-2) to the 3 bands of Landsat-9:
 ```
 python tta-tent-cloudscout.py \
