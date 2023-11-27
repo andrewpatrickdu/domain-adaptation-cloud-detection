@@ -9,7 +9,6 @@ This repository is based on the paper, "Domain Adaptation for Satellite-Borne Hy
   journal={arXiv preprint arXiv:2309.02150},
   year={2023}
 }
-
 ```
 ## Getting started
 
@@ -22,6 +21,22 @@ pip install tensorboardX tensorboard
 pip install torch-summary
 conda install matplotlib 
 conda install -c anaconda pandas
+```
 
+### Datasets
+You can download the datasets at:
+
+NOTE: Make sure you add the two folders into the main directory (```cloud-detection```)
+
+## Training a source model
+To train a source model, run the following python script:
+
+```
+python train-source.py \
+    --MODEL_ARCH cloudscout \
+    --DATASET S2-2018 \
+    --NUM_BANDS 3 \
+    --GPU 0 \
+    --NUM_EPOCHS 300
 ```
 
