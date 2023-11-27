@@ -146,7 +146,7 @@ python tta-tent-cloudscout.py \
 or to update the ResNet50 model (trained on Landsat-9) to the 8 bands of Sentinel-2:
 ```
 python tta-tent-resnet50.py \
-    --MODEL resnet50-8-S2-2018 \
+    --MODEL resnet50-8-L9-2023 \
     --NUM_BANDS 8 \
     --DATASET S2-2018 \
     --ADAPTATION_EPOCH 1 \
