@@ -41,7 +41,11 @@ For example, to train the CloudScout architecture on the 3 bands of Sentinel-2:
 ```
 python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-Once training has completed, the results and checkpoint files are saved in ```cloud-detector/checkpoints/source-models/cloudscout-128a-S2-2018```.
+or to train the ResNet50 architecture on the 8 bands of Landsat-9: 
+```
+python train-source.py --MODEL_ARCH resnet50 --DATASET L9-2023 --NUM_BANDS 8 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detection
+```
+Once training has completed, the results and checkpoint files are saved in ```cloud-detector/checkpoints/source-models/```.
 
 
 ## Updating the source model to the target domain via offline adaptation (bandwidth efficient SDA)
