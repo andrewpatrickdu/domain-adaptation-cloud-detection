@@ -41,3 +41,6 @@ For example, to train the CloudScout architecture on Sentinel-2 data using 3 ban
 ```
 python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/cloud-detector
 ```
+
+## Updating the source model to the target domain via offline adaptation (bandwidth efficient SDA)
+
