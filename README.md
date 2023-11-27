@@ -37,11 +37,11 @@ python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 -
                                     resnet50
 ```
 
-For example, to train the CloudScout model on the 3 bands of Sentinel-2:
+For example, to train CloudScout on the 3 bands of Sentinel-2:
 ```
 python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-or to train the ResNet50 model on the 8 bands of Landsat-9: 
+or to train ResNet50 on the 8 bands of Landsat-9: 
 ```
 python train-source.py --MODEL_ARCH resnet50 --DATASET L9-2023 --NUM_BANDS 8 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
@@ -75,7 +75,7 @@ python fish-mask-cloudscout.py \
     --LOG False \
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-or to update only 1% of the weights of resnet-50 (trained on Landsat-9) to the 8 bands of Sentinel-2:
+or to update only 1% of the weights of ResNet-50 (trained on Landsat-9) to the 8 bands of Sentinel-2:
 ```
 python fish-mask-resnet50.py \
     --MODEL resnet50-8-L9-2023 \
@@ -98,7 +98,7 @@ Two test-time adaptation appoaches were used to update a source model to the tar
 
 
 #### DUA
-For example, to update the CloudScout model (trained on Sentinel-2) to the 3 bands of Landsat-9:
+For example, to update CloudScout (trained on Sentinel-2) to the 3 bands of Landsat-9:
 ```
 python tta-dua-cloudscout.py \
     --MODEL cloudscout-128a-S2-2018 \
@@ -115,7 +115,7 @@ python tta-dua-cloudscout.py \
     --LOG False \
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-or to update the ResNet50 model (trained on Landsat-9) to the 8 bands of Sentinel-2:
+or to update ResNet50 (trained on Landsat-9) to the 8 bands of Sentinel-2:
 ```
 python tta-dua-resnet50.py \
     --MODEL resnet50-8-L9-2023 \
@@ -134,7 +134,7 @@ python tta-dua-resnet50.py \
 ```
 
 #### TENT
-For example, to update the CloudScout model (trained on Sentinel-2) to the 3 bands of Landsat-9:
+For example, to update CloudScout (trained on Sentinel-2) to the 3 bands of Landsat-9:
 ```
 python tta-tent-cloudscout.py \
     --MODEL cloudscout-128a-S2-2018 \
@@ -150,7 +150,7 @@ python tta-tent-cloudscout.py \
     --LOG False \
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-or to update the ResNet50 model (trained on Landsat-9) to the 8 bands of Sentinel-2:
+or to update ResNet50 (trained on Landsat-9) to the 8 bands of Sentinel-2:
 ```
 python tta-tent-resnet50.py \
     --MODEL resnet50-8-L9-2023 \
