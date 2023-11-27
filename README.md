@@ -43,7 +43,7 @@ python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 -
 ```
 
 ## Updating the source model to the target domain via offline adaptation (bandwidth efficient SDA)
-There are three main python scripts used to update a source model in the offline adaptation setting:
+There are three python scripts used to update a source model in the offline adaptation setting:
 
 * ```generate_mask.py``` - defines functions used to calculate the FISH Mask.
 * ```fish-mask-cloudscout.py``` - used to update the CloudScout or CloudScout8 model.
@@ -82,10 +82,47 @@ python fish-mask-resnet50.py \
     --LOG True
 ```
 
+## Updating the source model to the target domain via online adaptation (test-time adaptation)
+There are four python scripts used to update a source model in the online adaptation setting:
+
+
+### Dynamic Unsupervised Adaptation
+```
+python tta-dua-cloudscout.py \
+    --MODEL cloudscout-128a-S2-2018 \
+    --NUM_BANDS 3 \
+    --DATASET L9-2023 \
+    --ADAPTATION_BATCH_SIZE 16 \
+    --ADAPTATION_SHUFFLE False \
+    --ADAPTATION_NUM_SAMPLES 16 \
+    --ADAPTATION_AUGMENTATION False \
+    --ADAPTATION_DECAY_FACTOR 0.94 \
+    --ADAPTATION_MIN_MOMENTUM_CONSTANT 0.005 \
+    --ADAPTATION_MOM_PRE 0.1 \
+    --GPU 0 \
+    --LOG False
+```
+
+### Test Entropy Minimisation (TENT)
+```
+python tta-dua-resnet50.py \
+    --MODEL resnet50-128a-S2-2018 \
+    --NUM_BANDS 3 \
+    --DATASET L9-2023 \
+    --ADAPTATION_BATCH_SIZE 16 \
+    --ADAPTATION_SHUFFLE False \
+    --ADAPTATION_NUM_SAMPLES 16 \
+    --ADAPTATION_AUGMENTATION False \
+    --ADAPTATION_DECAY_FACTOR 0.94 \
+    --ADAPTATION_MIN_MOMENTUM_CONSTANT 0.005 \
+    --ADAPTATION_MOM_PRE 0.1 \
+    --GPU 0 \
+    --LOG False
+```
 
 
 
-
-
+## Help and updates
+When time permits, I will update the repository based on the issues others may have at setting up and/or running the code.
 
 
