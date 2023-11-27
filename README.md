@@ -43,8 +43,13 @@ python train-source.py --MODEL_ARCH cloudscout --DATASET S2-2018 --NUM_BANDS 3 -
 ```
 
 ## Updating the source model to the target domain via offline adaptation (bandwidth efficient SDA)
-To update a source model in the offline adaptation setting, run the following python scripts:
+There are three main python scripts used to update a source model in the offline adaptation setting:
 
+* ```generate_mask.py``` - defines functions used to calculate the FISH Mask.
+* ```fish-mask-cloudscout.py``` - used to update the CloudScout or CloudScout8 model.
+* ```fish-mask-resnet50.py``` - used to update the resnet50 model.
+
+For example, to update either CloudScout or CloudScout8 (trained on Sentinel-2) to Landsat-9 using 3 bands: 
 ```
 python fish-mask-cloudscout.py \
     --MODEL cloudscout-128a-S2-2018 \
@@ -60,11 +65,12 @@ python fish-mask-cloudscout.py \
     --GPU 0 \
     --LOG True
 ```
+or to update resnet-50 (trained on Landsat-9) to Sentinel-2 using 8 bands:
 ```
 python fish-mask-resnet50.py \
-    --MODEL resnet50-128a-S2-2018 \
-    --NUM_BANDS 3 \
-    --DATASET L9-2023 \
+    --MODEL resnet50-8-L9-2023 \
+    --NUM_BANDS 8 \
+    --DATASET S2-2018 \
     --TRAIN_EPOCH 300 \
     --TRAIN_BATCH_SIZE 2 \
     --TEST_BATCH_SIZE 2 \
