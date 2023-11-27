@@ -49,7 +49,7 @@ There are three python scripts used to update a source model in the offline adap
 
 * ```generate_mask.py``` - defines functions used to calculate the FISH Mask.
 * ```fish-mask-cloudscout.py``` - used to update the CloudScout or CloudScout8 model.
-* ```fish-mask-resnet50.py``` - used to update the resnet50 model.
+* ```fish-mask-resnet50.py``` - used to update the ResNet50 model.
 
 For example, to update only 25% of the weights of CloudScout (trained on Sentinel-2) to the 3 bands of Landsat-9: 
 ```
@@ -105,12 +105,12 @@ python tta-dua-cloudscout.py \
     --GPU 0 \
     --LOG False
 ```
-or to update the resnet50 model (trained on Landsat-9) to Sentinel-2 using 3 bands
+or to update the ResNet50 model (trained on Landsat-9) to the 3 bands of Sentinel-2:
 ```
 python tta-dua-resnet50.py \
-    --MODEL resnet50-128a-S2-2018 \
+    --MODEL resnet50-125-L9-2018 \
     --NUM_BANDS 3 \
-    --DATASET L9-2023 \
+    --DATASET S2-2018 \
     --ADAPTATION_BATCH_SIZE 16 \
     --ADAPTATION_SHUFFLE False \
     --ADAPTATION_NUM_SAMPLES 16 \
@@ -123,8 +123,7 @@ python tta-dua-resnet50.py \
 ```
 
 ### TENT
-
-
+For example, to update the CloudScout model (trained on Sentinel-2) to the 3 bands of Landsat-9:
 ```
 python tta-tent-cloudscout.py \
     --MODEL cloudscout-128a-S2-2018 \
@@ -139,12 +138,12 @@ python tta-tent-cloudscout.py \
     --GPU 0 \
     --LOG False
 ```
-
+or to update the ResNet50 model (trained on Landsat-9) to the 3 bands of Sentinel-2:
 ```
 python tta-dua-resnet50.py \
-    --MODEL resnet50-128a-S2-2018 \
+    --MODEL resnet50-128a-L9-2023 \
     --NUM_BANDS 3 \
-    --DATASET L9-2023 \
+    --DATASET S2-2018 \
     --ADAPTATION_BATCH_SIZE 16 \
     --ADAPTATION_SHUFFLE False \
     --ADAPTATION_NUM_SAMPLES 16 \
