@@ -16,7 +16,6 @@ python tta-dua-resnet50.py \
     --ADAPTATION_MOM_PRE 0.1 \
     --GPU 0 \
     --LOG False
-
 """
 import torch
 import torch.nn as nn
@@ -102,7 +101,7 @@ def parse_args():
     parser.add_argument('--ROOT',
                         help='root directory',
                         type=str,
-                        default='/home/andrew/domain-adaptation-cloud-detection')
+                        default='/domain-adaptation-cloud-detection')
     parser.add_argument('--GPU',
                         help='gpu to run on',
                         type=int,

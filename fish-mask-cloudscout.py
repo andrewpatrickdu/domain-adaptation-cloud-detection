@@ -97,7 +97,7 @@ def parse_args():
     parser.add_argument('--ROOT',
                         help='root directory',
                         type=str,
-                        default='/home/andrew/domain-adaptation-cloud-detection')
+                        default='/domain-adaptation-cloud-detection')
     parser.add_argument('--GPU',
                         help='gpu to run on',
                         type=int,
