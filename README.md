@@ -66,6 +66,7 @@ python fish-mask-cloudscout.py \
     --FISH_GRAD_TYPE square \
     --GPU 0 \
     --LOG False
+    --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 or to update only 1% of the weights of resnet-50 (trained on Landsat-9) to the 3 bands of Sentinel-2:
 ```
@@ -82,6 +83,7 @@ python fish-mask-resnet50.py \
     --FISH_GRAD_TYPE square \
     --GPU 0 \
     --LOG False
+    --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 
 ## Updating the source model to the target domain via online adaptation (test-time adaptation)
@@ -104,6 +106,7 @@ python tta-dua-cloudscout.py \
     --ADAPTATION_MOM_PRE 0.1 \
     --GPU 0 \
     --LOG False
+    --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 or to update the ResNet50 model (trained on Landsat-9) to the 3 bands of Sentinel-2:
 ```
@@ -120,6 +123,7 @@ python tta-dua-resnet50.py \
     --ADAPTATION_MOM_PRE 0.1 \
     --GPU 0 \
     --LOG False
+    --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 
 ### TENT
@@ -137,6 +141,7 @@ python tta-tent-cloudscout.py \
     --ADAPTATION_LEARNING_RATE 0.001 \
     --GPU 0 \
     --LOG False
+    --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 or to update the ResNet50 model (trained on Landsat-9) to the 3 bands of Sentinel-2:
 ```
@@ -153,6 +158,7 @@ python tta-dua-resnet50.py \
     --ADAPTATION_MOM_PRE 0.1 \
     --GPU 0 \
     --LOG False
+    --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 
 
