@@ -25,5 +25,4 @@ class setup_dataset(Dataset):
         if self.transform is not None:
             image = self.transform(image)
         
-        # return image, label, img_name # uncomment when running correct_classify.py and test_model.py
         return image, label
