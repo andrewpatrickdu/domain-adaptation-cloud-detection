@@ -26,7 +26,7 @@ conda install -c anaconda pandas
 ### Datasets
 You can download the datasets (```Sentinel-2-Cloud-Mask-Catalogue``` and ```Landsat-9-Level-1```) at: https://universityofadelaide.box.com/s/f60mhnbv8tbysgxrv9dps3v6zoazg0ic
 
-NOTE: Make sure you add the two folders into the ```cloud-detection/datasets/``` directory.
+NOTE: Make sure to add the two dataset folders into the ```cloud-detection/datasets/``` directory.
 
 ## Training a source model
 To train a source model, run the following python script:
