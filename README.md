@@ -45,7 +45,7 @@ or to train ResNet50 on the 8 bands of Landsat-9:
 ```
 python train-source.py --MODEL_ARCH resnet50 --DATASET L9-2023 --NUM_BANDS 8 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-Once training has completed, the results and checkpoint files are saved in ```cloud-detector/checkpoints/source-models/```.
+Once training has completed, the results and checkpoint files are saved in the ```cloud-detector/checkpoints/source-models/``` directory.
 
 
 ## Updating the source model to the target domain 
