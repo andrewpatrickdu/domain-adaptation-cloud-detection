@@ -97,7 +97,7 @@ python fish-mask-resnet50.py \
 Two test-time adaptation approaches were used to update a source model in the online adaptation setting: (1) Dynamic Unsupervised Adaptation (DUA), and (2) Test Entropy Minimisation (TENT).
 
 
-#### DUA
+#### (1) DUA
 For example, to update CloudScout (trained on Sentinel-2) to the 3 bands of Landsat-9:
 ```
 python tta-dua-cloudscout.py \
@@ -133,7 +133,7 @@ python tta-dua-resnet50.py \
     --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
 
-#### TENT
+#### (2) TENT
 For example, to update CloudScout (trained on Sentinel-2) to the 3 bands of Landsat-9:
 ```
 python tta-tent-cloudscout.py \
