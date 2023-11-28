@@ -94,7 +94,7 @@ python fish-mask-resnet50.py \
 ```
 
 ### Online adaptation (test-time adaptation)
-Two test-time adaptation appoaches were used to update a source model in the online adaptation setting: (1) Dynamic Unsupervised Adaptation (DUA), and (2) Test Entropy Minimisation (TENT).
+Two test-time adaptation approaches were used to update a source model in the online adaptation setting: (1) Dynamic Unsupervised Adaptation (DUA), and (2) Test Entropy Minimisation (TENT).
 
 
 #### DUA
