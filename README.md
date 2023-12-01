@@ -26,7 +26,7 @@ conda install -c anaconda pandas
 ### Datasets
 You can download the datasets (```Sentinel-2-Cloud-Mask-Catalogue``` and ```Landsat-9-Level-1```) at: https://universityofadelaide.box.com/s/f60mhnbv8tbysgxrv9dps3v6zoazg0ic
 
-NOTE: Make sure to add the two dataset folders into the ```cloud-detection/datasets/``` directory.
+NOTE: Make sure to add the two dataset folders into the ```domain-adaptation-cloud-detection/datasets/``` directory.
 
 ## Training a source model
 To train a source model, run the following python script:
@@ -45,7 +45,7 @@ or to train ResNet50 on the 8 bands of Landsat-9:
 ```
 python train-source.py --MODEL_ARCH resnet50 --DATASET L9-2023 --NUM_BANDS 8 --GPU 0 --NUM_EPOCHS 300 --ROOT /home/andrew/domain-adaptation-cloud-detection
 ```
-Once training has completed, the results and checkpoint files are saved in the ```cloud-detector/checkpoints/source-models/``` directory.
+Once training has completed, the results and checkpoint files are saved in the ```domain-adaptation-cloud-detection/checkpoints/source-models/``` directory.
 
 
 ## Updating the source model to the target domain 
