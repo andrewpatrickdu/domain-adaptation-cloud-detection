@@ -168,7 +168,7 @@ python tta-tent-resnet50.py \
 ```
 
 ## Inference on Ubotica CogniSAT-XE1
-Code to run inference on the XE-1 is not provided. 
+Code to run inference on the XE1 is not provided. 
 
 
 ## Help and updates
