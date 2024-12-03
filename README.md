@@ -1,6 +1,6 @@
 # domain-adaptation-cloud-detection
 
-This repository is based on the paper, "Domain Adaptation for Satellite-Borne Hyperspectral Cloud Detection" - https://www.mdpi.com/2072-4292/16/18/3469
+This repository is based on the paper, "Domain Adaptation for Satellite-Borne Multispectral Cloud Detection" - https://www.mdpi.com/2072-4292/16/18/3469
 
 ```
 @Article{rs16183469,
